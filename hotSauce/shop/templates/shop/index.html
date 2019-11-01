@@ -1,0 +1,49 @@
+{% if latest_sauce_list %}
+    <ul class="sauce_list">
+    {% for sauce in latest_sauce_list %}
+        <li><a href="{% url 'shop:detail' sauce.id %}">{{ sauce.sauce_name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No Sauces are available.</p>
+{% endif %}
+
+
+<style>
+
+  .sauce_list {
+    font-size: 2em;
+    background-color: brown;
+    color: white;
+    padding: 1em;
+    margin: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 8em;
+    border-radius: 20px;
+  }
+
+  .sauce_list {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    font-family: Helvetica;
+    font-size: 16px;
+    line-height: 1.5;
+    list-style-type: none;
+    color: red;
+  }
+
+  .sauce_list li {
+    padding: 1em;
+    margin: 1em;
+  }
+
+  .sauce_list > li > a {
+    color: white;
+    text-decoration: none;
+  }
+</style>

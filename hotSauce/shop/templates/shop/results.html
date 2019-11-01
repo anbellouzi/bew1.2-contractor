@@ -1,0 +1,9 @@
+<h1>{{ sauce.sauce_name }}</h1>
+
+<ul>
+{% for order in sauce.choice_set.all %}
+    <li>{{ order.customer_name }} -- {{ sauce.sauce_rating }} vote{{ sauce.sauce_rating|pluralize }}</li>
+{% endfor %}
+</ul>
+
+<a href="{% url 'shop:detail' sauce.id %}">Rate again?</a>
