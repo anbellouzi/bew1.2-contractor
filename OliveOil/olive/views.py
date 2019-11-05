@@ -4,7 +4,7 @@ from .models import OliveOil
 
 
 def index(request):
-    olive_oil_list = OliveOil.objects.order_by('-pub_date')[:5]
+    olive_oil_list = OliveOil.objects.order_by('-pub_date')
     context = {'olive_oil_list': olive_oil_list}
     return render(request, 'olive/index.html', context)
 

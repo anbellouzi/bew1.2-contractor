@@ -7,7 +7,7 @@ body {
 .spacer {
   background-size: 100%;
   background-position: center%;
-  background-image: url(https://images.unsplash.com/photo-1565049140538-0f6b3f22f21f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=927&q=80);
+  background-image: url(https://hornbyislandsoap.ca/wp-content/uploads/HIS-olive-oil-background.jpg);
   background-color: #10364b;
   height: 40px;
   margin: 0;
@@ -22,7 +22,7 @@ body {
 }
 
 .background-img {
-  background-image: url(https://images.unsplash.com/photo-1475684339281-b713136b8860?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80);
+  background-image: url(https://i.pinimg.com/originals/63/8c/aa/638caa9bafcee563a9051b930fd03fc9.jpg);
   background-size: 100%;
   background-position: center;
 
@@ -45,4 +45,25 @@ body {
 }
 .grey {
   background-color: #D0D0D0;
+}
+.nav>li>a:focus, .nav>li>a:hover {
+    text-decoration: none;
+    background-color: green;
+}
+.carousel-item img {
+  background: no-repeat center center fixed;
+  background-size: cover;
+  background-position: 100%;
+  background-color: transparent;
+  height: 180px;
+  margin: 0;
+
+
+}
+.stylish-color-dark {
+  background-image: url(https://www.publicdomainpictures.net/pictures/130000/velka/olive-point-background.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+
 }
