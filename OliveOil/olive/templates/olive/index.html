@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+{% if olive_oil_list %}
+  {% for olive in olive_oil_list %}
+<div class="col-sm-2 m-5">
+  <div class="thumbnail" style="width: 27rem;">
+    <img class="img-responsive" src="{{ olive.olive_image }}" width="300px" alt="{{ olive.olive_name }}">
+    <div class="caption">
+      <h4 class="pull-right">${{ olive.olive_price }}</h4>
+      <h4 class="card-title">{{ olive.olive_name }}</h4>
+      <p class="card-text">{{ olive.olive_description }}</p>
+
+      <div class="ratings">
+        <p>
+          <span class="glyphicon glyphicon-star"></span>
+          <span class="glyphicon glyphicon-star"></span>
+          <span class="glyphicon glyphicon-star"></span>
+          <span class="glyphicon glyphicon-star"></span>
+          <span class="glyphicon glyphicon-star"></span>
+           (15 reviews)
+        </p>
+      </div>
+
+      <div class="space-ten"></div>
+      <div class="btn-ground text-center">
+          <button type="button" class="btn btn-primary"><i class="fa fa-shopping-cart"></i><a href=""></a> Add To Cart</button>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#product_view"><i class="fa fa-search"></i><a href="{% url 'olive:detail' olive.id %}" style="color:white">Quick View</a></button>
+      </div>
+      <div class="space-ten"></div>
+
+      <!-- <a href="{% url 'olive:detail' olive.id %}" class="btn btn-primary">Buy Now</a> -->
+    </div>
+  </div>
+</div>
+
+  {% endfor %}
+{% else %}
+
+<p>No oils are available.</p>
+
+
+{% endif %}
+
+
+
+
+{% endblock %}

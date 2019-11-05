@@ -1,0 +1,48 @@
+body {
+  font-family: Helvetica;
+  font-size: 2rem;
+  line-height: 1.5;
+}
+
+.spacer {
+  background-size: 100%;
+  background-position: center%;
+  background-image: url(https://images.unsplash.com/photo-1565049140538-0f6b3f22f21f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=927&q=80);
+  background-color: #10364b;
+  height: 40px;
+  margin: 0;
+}
+
+.title {
+  margin: 0;
+}
+
+.mt-negative-40 {
+  margin-top: -40px;
+}
+
+.background-img {
+  background-image: url(https://images.unsplash.com/photo-1475684339281-b713136b8860?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80);
+  background-size: 100%;
+  background-position: center;
+
+}
+
+.monospaced { font-family: 'Ubuntu Mono', monospaced ; }
+
+.add-to-cart .btn-qty {
+  width: 52px;
+  height: 46px;
+}
+.add-to-cart .btn { border-radius: 0; }
+
+.nav > ul > li > a:hover {
+  background-color: none;
+}
+.add_to_cart_button {
+  background-color: brown;
+  color: white;
+}
+.grey {
+  background-color: #D0D0D0;
+}

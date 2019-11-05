@@ -1,0 +1,101 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div class=”col-md-6”>
+  <img src="{{ olive.olive_image }}" alt="olive.olive_name" class="image-responsive" />
+</div>
+<div class="col-md-6">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>{{ olive.olive_name }}</h1>
+      <span class="monospaced">No. {{ olive.id }}</span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <p class="description"> {{ olive.olive_description }}</p>
+    </div>
+  </div><!-- end row -->
+
+
+  <div class="row">
+    <div class="col-md-3">
+      <span class="sr-only">Four out of Five Stars</span>
+      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+      <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+      <span class="label label-success">61</span>
+    </div>
+    <div class="col-md-3">
+      <span class="monospaced">Write a Review</span>
+    </div>
+  </div><!-- end row -->
+
+
+  <div class="row">
+    <div class="col-md-12 bottom-rule mt-5 mb-5">
+      <h2 class="product-price">$129.00</h2>
+    </div>
+  </div><!-- end row -->
+
+  <div class="row add-to-cart">
+    <div class="col-md-5 product-qty">
+      <span class="btn btn-default btn-lg btn-qty grey ">
+        <span class="glyphicon glyphicon-plus grey" aria-hidden="true"></span>
+      </span>
+
+      <input class="btn btn-default btn-lg btn-qty grey" value="1" />
+
+      <span class="btn btn-default btn-lg btn-qty grey">
+        <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+      </span>
+    </div>
+
+    <div class="col-md-4">
+      <button class="btn btn-lg btn-brand btn-full-width add_to_cart_button">
+        Add to Cart
+      </button>
+    </div>
+  </div><!-- end row -->
+
+  <div class="row">
+    <div class="col-md-4 text-center">
+      <span class="monospaced">In Stock</span>
+    </div>
+  </div><!-- end row -->
+
+
+  <div class="row">
+    <div class="col-md-12 bottom-rule top-10"></div>
+  </div><!-- end row -->
+<br></br>
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active">
+      <a href="#description" aria-controls="description" role="tab" data-toggle="tab" >Description</a>
+    </li>
+    <li role="presentation">
+      <a href="#features" aria-controls="features" role="tab" data-toggle="tab" >Features</a>
+    </li>
+    <li role="presentation"> <a href="#notes" aria-controls="notes" role="tab" data-toggle="tab" >Notes</a>
+    </li>
+    <li role="presentation">
+      <a href="#reviews" aria-controls="reviews" role="tab" data-toggle="tab" >Reviews</a>
+    </li>
+  </ul>
+
+  <div role="tabpanel" class="tab-pane active" id="description">
+    <p class="top-10 pt-5">
+      {{ olive.olive_description }}
+
+    </div>
+
+
+
+    {% endblock %}
