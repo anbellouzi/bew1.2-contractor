@@ -36,9 +36,6 @@ body {
 }
 .add-to-cart .btn { border-radius: 0; }
 
-.nav > ul > li > a:hover {
-  background-color: none;
-}
 .add_to_cart_button {
   background-color: brown;
   color: white;
@@ -46,10 +43,20 @@ body {
 .grey {
   background-color: #D0D0D0;
 }
+
+.navbar-light .navbar-nav .nav-link {
+    text-decoration: none;
+    color: black;
+}
+
 .nav>li>a:focus, .nav>li>a:hover {
     text-decoration: none;
-    background-color: green;
+    background-color: #ffbf00;
+    color: white;
 }
+
+
+
 .carousel-item img {
   background: no-repeat center center fixed;
   background-size: cover;
@@ -66,4 +73,14 @@ body {
   background-position: center;
   background-size: 100%;
 
+}
+.back_button, .back_button_2 {
+  text-decoration: none;
+  color: black;
+  height: 10px;
+}
+
+.back_button:hover, .back_button_2:hover {
+  text-decoration: underline;
+  color: #ffbf00;
 }

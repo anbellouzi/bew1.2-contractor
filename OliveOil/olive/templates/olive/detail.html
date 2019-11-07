@@ -3,7 +3,7 @@
 
 {% block content %}
 
-  <a href="{% url 'olive:index' %}" style="color:grey;text-decoration: underline">Back</a>
+  <a class="back_button" href="{% url 'olive:index' %}" >Back </a>
 
 
 <div class=”col-md-6”>
@@ -12,7 +12,7 @@
 <div class="col-md-6">
   <div class="row">
     <div class="col-md-12">
-      <h1>{{ olive.olive_name }}</h1>
+      <h1>{{ olive.olive_name|title }}</h1>
       <span class="monospaced">No. {{ olive.id }}</span>
     </div>
   </div>

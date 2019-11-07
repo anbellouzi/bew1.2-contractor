@@ -8,7 +8,7 @@
   {% for olive in olive_oil_list %}
 <div class="col-sm-2 ml-5 mt-0 mr-2 p-0">
   <div class="thumbnail" style="width: 27rem;">
-    <img class="img-responsive" src="{{ olive.olive_image }}" width="300px" alt="{{ olive.olive_name }}">
+    <img class="img-responsive" src="{{ olive.olive_image }}" width="300px" alt="{{ olive.olive_name|title }}">
     <div class="caption">
       <h4 class="pull-right">${{ olive.olive_price }}</h4>
       <h4 class="card-title">{{ olive.olive_name }}</h4>

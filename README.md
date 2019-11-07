@@ -10,7 +10,7 @@ Instruction:
 2. $ cd bew1.2-contractor
 3. $ cd hotSauce
 4. $ python3 manage.py runserver
-5. On any browser visit: http://127.0.0.1:8000/shop/
+5. On any browser visit: http://127.0.0.1:8000/olive/
 
 Progress:
   1. Added Sauce fields
