@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+  <a class="navbar-brand" href="#"><img src="https://icon-library.net/images/olive-oil-icon/olive-oil-icon-22.jpg" width="40px" height="40px" alt=""></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="nav navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link text-white" href="{% url 'olive:index' %}">HOME <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="{% url 'olive:detail' 1 %}">OLIVE</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="{% url 'olive:detail'  2 %}">ARGAN</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="{% url 'olive:detail'  3 %}">PEANUT</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="#">ABOUT</a>
+      </li>
+    </ul>
+  </div>
+
+  <form class="form-inline ml-auto">
+    {% if user.is_authenticated %}
+    <div class="text-white mr-5">Hello, <strong>{{user.username}}</strong>!</div>
+    <!-- <a href="" class="btn btn-success ml-4">New Product</a> -->
+    <a href="{% url 'logout' %}" class="btn btn-danger ml-2">Log Out</a>
+    {% else %}
+    <a href="{% url 'login' %}" class="btn btn-secondary ml-2">Log In</a>
+    <a href="{% url 'signup' %}" class="btn btn-primary ml-2">Sign Up</a>
+    {% endif %}
+
+  </form>
+</nav>

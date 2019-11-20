@@ -27,7 +27,7 @@
 
       <div class="space-ten"></div>
       <div class="btn-ground text-center">
-          <button type="button" class="btn btn-primary"><i class="fa fa-shopping-cart"></i><a href=""></a> Add To Cart</button>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#shopping_cart"><i class="fa fa-shopping-cart"></i><a href="{% url 'olive:order' olive.id %}" style="color:white">Buy Now</a></button>
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#product_view"><i class="fa fa-search"></i><a href="{% url 'olive:detail' olive.id %}" style="color:white">Quick View</a></button>
       </div>
       <div class="space-ten"></div>

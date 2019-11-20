@@ -1,15 +1,23 @@
 
+
 {% extends 'base.html' %}
+{% block home_banner %}
+  {% include 'olive/partials/navbar.html' %}
+{% endblock %}
+
+
 
 {% block content %}
 
-  <a class="back_button" href="{% url 'olive:index' %}" >Back </a>
+<a class="back_button" href="{% url 'olive:index' %}" >Back </a>
 
 
 <div class=”col-md-6”>
   <img src="{{ olive.olive_image }}" alt="olive.olive_name" class="image-responsive" />
 </div>
+
 <div class="col-md-6">
+  <!-- title and id -->
   <div class="row">
     <div class="col-md-12">
       <h1>{{ olive.olive_name|title }}</h1>
@@ -17,13 +25,14 @@
     </div>
   </div>
 
+  <!-- Description -->
   <div class="row">
     <div class="col-md-12">
       <p class="description"> {{ olive.olive_description }}</p>
     </div>
   </div><!-- end row -->
 
-
+  <!-- review -->
   <div class="row">
     <div class="col-md-3">
       <span class="sr-only">Four out of Five Stars</span>
@@ -39,13 +48,14 @@
     </div>
   </div><!-- end row -->
 
-
+  <!-- price -->
   <div class="row">
     <div class="col-md-12 bottom-rule mt-5 mb-5">
       <h2 class="product-price">$129.00</h2>
     </div>
   </div><!-- end row -->
 
+  <!-- quantity -->
   <div class="row add-to-cart">
     <div class="col-md-5 product-qty">
       <span class="btn btn-default btn-lg btn-qty grey ">
@@ -60,12 +70,14 @@
     </div>
 
     <div class="col-md-4">
-      <button class="btn btn-lg btn-brand btn-full-width add_to_cart_button">
-        Add to Cart
+      <button type="button" class="btn btn-lg btn-brand btn-full-width add_to_cart_button" data-toggle="modal" data-target="#shopping_cart">
+        <i class="fa fa-shopping-cart"></i>
+        <a href="{% url 'olive:order' olive.id %}" style="color:white">Buy Now</a>
       </button>
     </div>
   </div><!-- end row -->
 
+  <!-- in stock -->
   <div class="row">
     <div class="col-md-4 text-center">
       <span class="monospaced">In Stock</span>
@@ -74,16 +86,16 @@
 
 
   <div class="row">
-    <div class="col-md-12 bottom-rule top-10"></div>
-  </div><!-- end row -->
-<br></br>
+    <div class="col-md-12 bottom-rule mt-5"></div>
+    </div><!-- end row -->
+
   <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist">
     <li role="presentation" class="active">
       <a href="#description" aria-controls="description" role="tab" data-toggle="tab" >Description</a>
     </li>
     <li role="presentation">
-      <a href="#features" aria-controls="features" role="tab" data-toggle="tab" >Features</a>
+      <a href="#features" aria-controls="comment" role="tab" data-toggle="tab" >Comments</a>
     </li>
     <li role="presentation"> <a href="#notes" aria-controls="notes" role="tab" data-toggle="tab" >Notes</a>
     </li>
@@ -93,10 +105,20 @@
   </ul>
 
   <div role="tabpanel" class="tab-pane active" id="description">
-    <p class="top-10 pt-5">
+    <p class="mt-5 pt-5 mb-5 pb-5">
       {{ olive.olive_description }}
+  </div>
 
-    </div>
+</div>
+
+<div class="container pb-cmnt-container" style="border-top: 0.5px solid	#E8E8E8;">
+</div>
+
+
+
+
+
+
 
 
 

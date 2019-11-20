@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block home_banner %}
+  {% include 'olive/partials/navbar.html' %}
+{% endblock %}
+
+
+{% block content %}
+
+{% if order %}
+<div class="jumbotron text-center col-xl">
+  <h1 class="display-3">Thank You {{ order.customer_name }}! </h1>
+  <p class="lead"><strong>Please check your email @ {{ order.customer_email }}</strong> for further instructions on how to complete your account setup.</p>
+  <hr>
+  <p>
+    Having trouble? <a href="">Contact us</a>
+  </p>
+  <p class="lead">
+    <a class="btn btn-primary btn-sm" href="https://bootstrapcreative.com/" role="button">Continue to homepage</a>
+  </p>
+</div>
+
+{% else %}
+<div class="jumbotron text-center col-xl">
+  <h1 class="display-3">Sorry you did not order anything</h1>
+  <p class="lead"><strong>Please try again </strong></p>
+  <hr>
+  <p>
+    Having trouble? <a href="">Contact us</a>
+  </p>
+  <p class="lead">
+    <a class="btn btn-primary btn-sm" href="https://bootstrapcreative.com/" role="button">Continue to homepage</a>
+  </p>
+</div>
+{% endif %}
+
+{% endblock %}
