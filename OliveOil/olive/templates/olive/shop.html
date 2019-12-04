@@ -59,7 +59,7 @@
             {% for olive in olive_oil_list %}
               <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card h-100">
-                  <a href="#"><img class="card-img-top" src="{{ olive.olive_image }}" alt="{{ olive.olive_name }}"></a>
+                  <a href="{% url 'olive:checkout' olive.id %}"><img class="card-img-top" src="{{ olive.olive_image }}" alt="{{ olive.olive_name }}"></a>
                   <div class="card-body">
                     <h4 class="card-title">
                       <a href="{% url 'olive:detail' olive.id %}">{{ olive.olive_name }}</a>
@@ -69,7 +69,7 @@
                   </div>
                   <div class="card-footer">
                     <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                    <a class="btn btn-primary btn-lg float-right" href="#">Buy Now</a>
+                    <a class="btn btn-primary btn-lg float-right" href="{% url 'olive:checkout' olive.id %}">Buy Now</a>
                   </div>
                 </div>
               </div>
