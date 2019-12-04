@@ -5,16 +5,27 @@
 
 {% block content%}
 
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="form-popup text-left my-auto" id="myForm">
-      <form action="" class="form-container" id="edit_form" method="post">{% csrf_token %}
-        {{ form.as_p }}
-        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-        <button type="submit" class="btn" onclick="">Save</button>
-      </form>
+<section class="shopping-cart light col-xl">
+  <div class="container">
+    <img class="float-left" src="{{ olive.olive_image }}" alt="" width="150px" height="150px">
+    <div class="block-heading">
+      <h2>Checkout</h2>
+      <p>{{olive.olive_name}} ${{ olive.olive_price }} each</p>
+      <p>{{ olive.olive_description }}</p>
+    </div>
+
+    <div class="container float-left" id="checkout_container">
+      <div class="row justify-content-center">
+          <form action="" class="form-container" id="" method="post">{% csrf_token %}
+            {{ form.as_p }}
+            <div class="order_button">
+              <button type="submit" class="btn" onclick="">ORDER</button>
+            </div>
+          </form>
+      </div>
     </div>
   </div>
-</div>
+</section>
+
 
 {% endblock %}

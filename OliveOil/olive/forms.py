@@ -7,4 +7,9 @@ class CustomerForm(forms.ModelForm):
     class Meta:
         model = Order
         fields = '__all__'
-        
+        exclude = ["author", "olive_id"]
+        widgets = {
+            'full_name': forms.TextInput(attrs={'placeholder': 'John Doe'}),
+            'email': forms.TextInput(attrs={'placeholder': 'Enter your email'}),
+            'phone_number': forms.TextInput(attrs={'placeholder': '###-###-####'}),
+        }

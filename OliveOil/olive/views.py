@@ -21,6 +21,22 @@ class IndexView(ListView):
         context = {'olive_oil_list': product_list}
         return render(request, 'olive/index.html', context)
 
+class ShopView(ListView):
+    model = OliveOil
+
+    def get(self, request):
+        print("_____________")
+        print("_____________")
+        # print(category)
+        print("_____________")
+        print("_____________")
+        product_list = OliveOil.objects.all()
+        context = {'olive_oil_list': product_list}
+        return render(request, 'olive/shop.html', context)
+
+    def post(self,request):
+        pass
+
 
 class DetailView(DetailView):
     model = OliveOil
@@ -28,7 +44,6 @@ class DetailView(DetailView):
     def get(self, request, olive_id):
         olive = OliveOil.objects.get(pk=olive_id)
         return render(request, 'olive/detail.html', {'olive': olive})
-
 
 class OrderView(DetailView):
     model = OliveOil
@@ -49,20 +64,23 @@ class CustomerFormView(CreateView):
         return render(request, "olive/customer_form.html", context)
 
     def post(self, request, olive_id):
-        user = request.user
-        olive = OliveOil.objects.get(pk=olive_id)
+        product = OliveOil.objects.get(pk=olive_id)
         if request.method == "POST":
             form = CustomerForm(request.POST)
             if form.is_valid():
+                user = request.user
                 order = form.save(commit=False)
-                # order.product = olive
+                order.total_price = request.POST.get('modified', '')
+                order.olive_id = olive_id
+
+                if (user.id != None):
+                    order.author = request.user
+
                 order.save()
 
 
-                txt_message = order.customer_name+" Your order was processed successfully"
-                # messages.success(request, txt_message)
 
-                return render(request, 'olive/thankyou.html', {'order': order})
+                return render(request, 'olive/thankyou.html', {'order': order, 'product': product})
             else:
 
                 errors = "Your order was not created"
@@ -73,13 +91,3 @@ class CustomerFormView(CreateView):
         context = {'form': form}
 
         return render(request, 'olive/index.html', context)
-
-
-
-
-class ThankyouView(DetailView):
-    model = OliveOil
-
-    def get(self, request, olive_id):
-        olive = OliveOil.objects.get(pk=olive_id)
-        return render(request, 'olive/thankyou.html', {'olive': olive})

@@ -11,35 +11,35 @@
     <div class="container">
           <div class="block-heading">
             <h2>Review Order</h2>
-            <p>{{olive.olive_description}}</p>
           </div>
-          <div class="content">
-        <div class="row">
-          <div class="col-md-12 col-lg-8">
-            <div class="items">
-              <div class="product">
-                <div class="row">
-                  <div class="col-md-3">
-                    <img class="img-fluid mx-auto d-block image" src="{{ olive.olive_image }}">
-                  </div>
-                  <div class="col-md-8">
-                    <div class="info">
-                      <div class="row">
-                        <div class="col-md-5 product-name">
-                          <div class="product-name">
-                            <a href="{% url 'olive:detail' olive.id %}">{{ olive.olive_name }}</a>
-                            <div class="product-info">
-                              <div>SKU: <span class="value">#{{ olive.id }}</span></div>
-                              <div>Description: <span class="value">{{ olive.olive_description }}</span></div>
+        <div class="content">
+          <div class="row">
+            <div class="col-md-12 col-lg-8">
+              <div class="items">
+                <div class="product">
+                  <div class="row">
+                    <div class="col-md-3">
+                      <img class="img-fluid mx-auto d-block image" src="{{ olive.olive_image }}">
+                    </div>
+                    <div class="col-md-8">
+                      <div class="info">
+                        <div class="row">
+                          <div class="col-md-5 product-name">
+                            <div class="product-name">
+                              <a href="{% url 'olive:detail' olive.id %}">{{ olive.olive_name }}</a>
+                              <div class="product-info">
+                                <div>SKU: <span class="value">#{{ olive.id }}</span></div>
+                                <div>Description: <span class="value">{{ olive.olive_description }}</span></div>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                        <div class="col-md-4 quantity">
-                          <label for="quantity">Quantity:</label>
-                          <input id="quantity" type="number" value ="1" class="form-control quantity-input" >
-                        </div>
-                        <div class="col-md-3 price">
-                          <span>${{ olive.olive_price }}</span>
+                          <div class="col-md-4 quantity">
+                            <label for="quantity">Quantity:</label>
+                            <input id="quantity" type="number" value ="1" class="form-control quantity-input" >
+                          </div>
+                          <div class="col-md-3 price">
+                            <span>${{ olive.olive_price }}</span>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -47,24 +47,19 @@
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-md-12 col-lg-4">
-            <div class="summary">
-              <h3>Summary</h3>
-              <div class="summary-item"><span class="text">Subtotal</span><span id="subtotal" class="price">${{ olive.olive_price }}</span></div>
-              <div class="summary-item"><span class="text">Discount</span><span class="price">$0</span></div>
-              <div class="summary-item"><span class="text">Shipping</span><span class="price">$5</span></div>
-              <div class="summary-item"><span class="text">Total</span><span id="price" class="price">0</span></div>
-              {% if user.is_authenticated %}
+            <div class="col-md-12 col-lg-4">
+              <div class="summary">
+                <h3>Summary</h3>
+                <div class="summary-item"><span class="text">Subtotal</span><span id="subtotal" class="price">${{ olive.olive_price }}</span></div>
+                <div class="summary-item"><span class="text">Discount</span><span class="price">$0</span></div>
+                <div class="summary-item"><span class="text">Shipping</span><span class="price">$5</span></div>
+                <div class="summary-item"><span class="text">Total</span><span id="price" class="price">0</span></div>
                 <a class="btn btn-primary btn-lg btn-block" href="{% url 'olive:checkout' olive.id %}" style="color:white;margin: 5px;">Checkout</a>
-              {% else %}
-                <a href="{% url 'login' %}" class="btn btn-secondary ml-2">Log In</a>
-              {% endif %}
 
+              </div>
             </div>
           </div>
         </div>
-      </div>
     </div>
   </section>
 
